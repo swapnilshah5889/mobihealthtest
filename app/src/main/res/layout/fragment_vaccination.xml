@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#0082C6"
+    android:id="@+id/frame_vaccination"
+    tools:context=".VaccinationFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_vaccines"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_marginLeft="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textSize="17dp"
+                android:textColor="#fff"
+                android:text="At Birth"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></TextView>
+
+            <TextView
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="2dp"
+                android:textColor="#fff"
+                android:maxLines="1"
+                android:text="Protect your baby against 14 potentially serious."
+                android:textSize="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></TextView>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:weightSum="20"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.viewpager.widget.ViewPager
+                android:layout_weight="1"
+                android:id="@+id/vp_cards"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:clipToPadding="false"
+                android:overScrollMode="never"
+                android:paddingLeft="80dp"
+                android:paddingTop="30dp"
+                android:paddingRight="80dp"
+                android:paddingBottom="40dp" />
+
+            <LinearLayout
+                android:gravity="center"
+                android:layout_weight="19"
+                android:layout_marginBottom="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tl_card_tabs"
+                    app:tabBackground="@drawable/tab_selector"
+                    app:tabGravity="center"
+                    app:tabIndicatorHeight="0dp"
+                    app:tabPaddingStart="5dp"
+                    app:tabPaddingEnd="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:paddingBottom="16dp"
+        android:paddingLeft="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/img_expanded"
+            android:src="@drawable/one"
+            android:visibility="invisible"
+            android:focusable="false"
+            android:clickable="false"
+            android:scaleType="fitXY"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></ImageView>
+    </RelativeLayout>
+</FrameLayout>

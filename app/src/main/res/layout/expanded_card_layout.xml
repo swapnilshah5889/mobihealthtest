@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#00689f"
+    android:id="@+id/ll_cards_expanded"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:id="@+id/tb_expanded"
+                android:background="#00689f"
+                android:gravity="center"
+                android:foregroundGravity="center"
+                android:layout_height="wrap_content"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            </androidx.appcompat.widget.Toolbar>
+
+
+            <TextView
+                android:text="BCG"
+                android:id="@+id/tv_title_expaneded"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textColor="#fff"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"></TextView>
+
+
+            <TextView
+                android:id="@+id/tv_page_counter"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                android:textColor="#2EB1F7"
+                android:paddingRight="20dp"
+                android:text="1/14"
+                android:gravity="right|center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"></TextView>
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="20"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <com.example.mobihealthtest.VertivalViewPager
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:id="@+id/viewPager"
+                android:overScrollMode="never">
+            </com.example.mobihealthtest.VertivalViewPager>
+
+
+            <LinearLayout
+                android:gravity="center"
+                android:layout_weight="19"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tl_card_tabs_expanded"
+                    app:tabBackground="@drawable/tab_selector"
+                    app:tabGravity="center"
+                    app:tabIndicatorHeight="0dp"
+                    app:tabPaddingStart="5dp"
+                    app:tabPaddingEnd="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

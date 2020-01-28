@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#00689f"
+    tools:context=".ContentFragment">
+
+    <LinearLayout
+        android:weightSum="20"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.example.mobihealthtest.HorizontalViewPager
+            android:id="@+id/vpHorizontal"
+            android:clipToPadding="false"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            android:padding="20dp">
+
+
+        </com.example.mobihealthtest.HorizontalViewPager>
+
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tl_card_tabs_expanded"
+            app:tabBackground="@drawable/tab_selector"
+            app:tabGravity="center"
+            app:tabIndicatorHeight="0dp"
+            app:tabPaddingStart="5dp"
+            app:tabPaddingEnd="5dp"
+            android:layout_weight="19"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+        </com.google.android.material.tabs.TabLayout>
+
+    </LinearLayout>
+
+</FrameLayout>
