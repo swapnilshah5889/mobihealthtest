@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
                     b_show = !b_show;
                 }
                 else{
-                    ReverAnimation();
+                    RevertAnimation();
                     b_show = !b_show;
                 }
             }
@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void ReverAnimation() {
+    private void RevertAnimation() {
 
         ConstraintSet constraintSet = new ConstraintSet();
         constraintSet.clone(this, R.layout.activity_main);

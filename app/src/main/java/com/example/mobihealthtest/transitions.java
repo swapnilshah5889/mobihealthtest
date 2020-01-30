@@ -15,7 +15,7 @@ public class transitions {
 
     public static int TransitionTitleBar(int y, int oldy, int flag_title_scroll,
                                          ViewGroup Parent, View BackArrow, View TitleBar,
-                                         Animation animTitleSlideup, Animation animTitleSlideDown){
+                                         Animation animTitleSlideup, Animation animTitleSlideDown,int duration){
         int diff = y-oldy;
         if(diff<0)
             diff*=-1;
@@ -23,14 +23,14 @@ public class transitions {
         if(diff>10){
             if(y>oldy && flag_title_scroll == 0 ){
                 flag_title_scroll = 1;
-                SlideUpDown(Parent,BackArrow,true,1);
+                SlideUpDown(Parent,BackArrow,true,1,duration);
                 //transitions.FadeInOut(ll_toolbar_addevent,true,ngo_add_event.this);
                 TitleBar.startAnimation(animTitleSlideup);
 
             }
             else if(y<oldy && flag_title_scroll==1 && y <100){
                 flag_title_scroll = 0;
-                SlideUpDown(Parent,BackArrow,false,1);
+                SlideUpDown(Parent,BackArrow,false,1,duration);
                 //transitions.FadeInOut(ll_toolbar_addevent,false,ngo_add_event.this);
                 TitleBar.startAnimation(animTitleSlideDown);
             }
@@ -40,7 +40,7 @@ public class transitions {
 
         if(y==0 && flag_title_scroll==1){
             flag_title_scroll = 0;
-            SlideUpDown(Parent,BackArrow,false,1);
+            SlideUpDown(Parent,BackArrow,false,1,duration);
             //transitions.FadeInOut(ll_toolbar_addevent,false,ngo_add_event.this);
             TitleBar.startAnimation(animTitleSlideDown);
         }
@@ -50,13 +50,13 @@ public class transitions {
     }
 
 
-    public static Boolean SlideUpDown(ViewGroup parent, View target, Boolean isVisible, int gravity){
+    public static Boolean SlideUpDown(ViewGroup parent, View target, Boolean isVisible, int gravity,int duration){
         Transition transition = new Slide(Gravity.BOTTOM);
         if(gravity == 1)
             transition = new Slide(Gravity.TOP);
         else if(gravity == 2)
             transition = new Slide(Gravity.CENTER);
-        transition.setDuration(200);
+        transition.setDuration(duration);
         transition.addTarget(target.getId());
         TransitionManager.beginDelayedTransition(parent,transition);
         isVisible = !isVisible;

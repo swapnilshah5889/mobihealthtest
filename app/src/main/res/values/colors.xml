@@ -5,6 +5,11 @@
     <color name="colorAccent">#D81B60</color>
 
 
+
+<!--Cooco Login Register Screen-->
+    <color name="viewpager_background">#34C1B8</color>
+    <color name="cooco_back">#f2f3f7</color>
+
     <color name="coco_signin_btn_blue">#01A1FF</color>
     <color name="coco_signin_btn_blue_light">#2cb1fe</color>
 

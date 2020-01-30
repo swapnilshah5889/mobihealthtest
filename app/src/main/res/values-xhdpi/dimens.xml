@@ -45,4 +45,10 @@
     <dimen name="margin_b_log">@dimen/_13sdp</dimen>
 
 
+    <!--Translation Z-->
+    <dimen name="z_zero">1dp</dimen>
+    <dimen name="z_one">1dp</dimen>
+    <dimen name="z_two">2dp</dimen>
+    <dimen name="z_three">3dp</dimen>
+
 </resources>

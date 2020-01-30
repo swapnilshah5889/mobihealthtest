@@ -9,39 +9,41 @@
     tools:context=".CooCoLogin">
 
 
-    <!--Full Name Input-->
+    <!--Extra-->
     <LinearLayout
-        android:id="@+id/ll_full_name_coco"
+        android:translationZ="1dp"
+        android:gravity="top"
+        android:id="@+id/ll_extra_layout"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/thirty_sdp"
+        android:layout_height="@dimen/_40sdp"
         android:layout_marginBottom="@dimen/twenty_sdp"
-        android:background="#34C1B8"
+        android:background="@color/viewpager_background"
         android:orientation="vertical"
         android:paddingLeft="@dimen/twenty_sdp"
         android:paddingRight="@dimen/twenty_sdp"
-        app:layout_constraintBottom_toTopOf="@+id/ll_mobile_number_coco2"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-
     </LinearLayout>
 
 
-    <!--User ID Input-->
+    <!--Full Name-->
     <LinearLayout
         android:visibility="visible"
-        android:id="@+id/ll_mobile_number_coco2"
+        android:id="@+id/ll_full_name_coco"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/bottom_margin"
         android:layout_marginBottom="@dimen/bottom_margin"
         android:orientation="vertical"
         android:paddingLeft="@dimen/padding_lr"
         android:paddingRight="@dimen/padding_lr"
+        android:translationZ="0dp"
         app:layout_constraintBottom_toTopOf="@+id/ll_mobile_number_coco"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ll_full_name_coco">
+        app:layout_constraintTop_toBottomOf="@+id/ll_extra_layout">
 
 
         <TextView
@@ -84,6 +86,7 @@
 
     <!--User ID Input-->
     <LinearLayout
+        android:animateLayoutChanges="true"
         android:id="@+id/ll_mobile_number_coco"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -91,13 +94,15 @@
         android:orientation="vertical"
         android:paddingLeft="@dimen/padding_lr"
         android:paddingRight="@dimen/padding_lr"
+        android:translationZ="1dp"
         app:layout_constraintBottom_toTopOf="@+id/ll_password_coco"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ll_mobile_number_coco2">
+        app:layout_constraintTop_toBottomOf="@+id/ll_full_name_coco">
 
 
         <TextView
+            android:background="#f2f3f7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/bottom_margin_header"
@@ -145,6 +150,7 @@
         android:orientation="vertical"
         android:paddingLeft="@dimen/padding_lr"
         android:paddingRight="@dimen/padding_lr"
+        android:translationZ="1dp"
         app:layout_constraintBottom_toTopOf="@+id/ll_cpassword_coco"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toLeftOf="parent"
@@ -198,6 +204,7 @@
         android:orientation="vertical"
         android:paddingLeft="@dimen/padding_lr"
         android:paddingRight="@dimen/padding_lr"
+        android:translationZ="0dp"
         app:layout_constraintBottom_toTopOf="@+id/ll_dob_coco"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toLeftOf="parent"
@@ -250,7 +257,8 @@
         android:orientation="vertical"
         android:paddingLeft="@dimen/padding_lr"
         android:paddingRight="@dimen/padding_lr"
-        app:layout_constraintBottom_toTopOf="@+id/ll_forgot_password"
+        android:translationZ="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/ll_login_register_button_coco"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ll_cpassword_coco">
@@ -313,18 +321,19 @@
 
     <!--Forgot Password-->
     <LinearLayout
+        android:background="#0000"
         android:id="@+id/ll_forgot_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_t_fp"
-        android:layout_marginBottom="@dimen/margin_b_fp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
         android:gravity="right"
         android:orientation="vertical"
         android:paddingEnd="@dimen/padding_r_fp"
-        app:layout_constraintBottom_toTopOf="@+id/ll_login_register_button_coco"
+        android:translationZ="0dp"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll_dob_coco">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/tv_forgot_pass_coco"
@@ -339,18 +348,22 @@
     </LinearLayout>
 
 
+
+
     <!--Sign in Button-->
     <LinearLayout
         android:id="@+id/ll_login_register_button_coco"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/twenty_sdp"
         android:layout_marginBottom="@dimen/margin_b_sb"
         android:gravity="center"
         android:orientation="vertical"
+        android:translationZ="1dp"
         app:layout_constraintBottom_toTopOf="@+id/ll_login_register_coco"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ll_forgot_password">
+        app:layout_constraintTop_toBottomOf="@id/ll_dob_coco">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -426,6 +439,7 @@
         android:layout_marginBottom="@dimen/margin_b_log"
         android:gravity="center"
         android:orientation="horizontal"
+        android:translationZ="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toLeftOf="parent"
@@ -435,7 +449,7 @@
             android:id="@+id/tv_login_reg_pretext_coco"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Already have an account? "
+            android:text="Already have an account ?  "
             android:textColor="#8895a6"
             android:textSize="@dimen/text_log"
             android:textStyle="normal"></TextView>
@@ -446,12 +460,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:clickable="true"
-            android:text=" Log In"
+            android:text=" Log In  "
             android:textColor="#5f7fb2"
             android:textSize="@dimen/text_log"
             android:textStyle="bold"></TextView>
 
     </LinearLayout>
+
+<!--
+
+    <include layout="@layout/cooco_login_viewpager"
+        android:visibility="gone"></include>
+-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

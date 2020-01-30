@@ -6,6 +6,9 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.drawable.DrawableCompat;
+import androidx.transition.Fade;
+import androidx.transition.Slide;
+import androidx.transition.Transition;
 import androidx.transition.TransitionManager;
 
 import android.animation.Animator;
@@ -17,8 +20,11 @@ import android.graphics.drawable.TransitionDrawable;
 import android.os.Bundle;
 import android.transition.ChangeBounds;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.AnticipateInterpolator;
+import android.view.animation.DecelerateInterpolator;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextSwitcher;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,9 +37,18 @@ public class CooCoLogin extends AppCompatActivity {
     //Main container
     ConstraintLayout ll_container_coco_login;
 
+
+    //ViewPager
+    LinearLayout ll_container_viewpager;
+    Boolean b_viewpager = false;
+
     //Forgot Password
     TextView tv_forgot_pass_coco;
     int fp_height = 0;
+
+
+    //Input
+    LinearLayout ll_mobile_number_coco,ll_full_name_coco,ll_password_coco,ll_cpassword_coco,ll_dob_coco;
 
     //Sign in/up button
     LinearLayout ll_arrow_image_coco;
@@ -43,6 +58,7 @@ public class CooCoLogin extends AppCompatActivity {
 
     //sign in/register text
     TextView tv_login_reg_pretext_coco,tv_login_reg_coco;
+    private int Animation_Duration = 500;
 
 
     @Override
@@ -55,6 +71,14 @@ public class CooCoLogin extends AppCompatActivity {
     }
 
     private void InitObjects() {
+
+        ll_mobile_number_coco = findViewById(R.id.ll_mobile_number_coco);
+        ll_full_name_coco = findViewById(R.id.ll_full_name_coco);
+        ll_password_coco = findViewById(R.id.ll_password_coco);
+        ll_cpassword_coco = findViewById(R.id.ll_cpassword_coco);
+        ll_dob_coco = findViewById(R.id.ll_dob_coco);
+
+        ll_container_viewpager = findViewById(R.id.ll_container_viewpager);
 
         ll_container_coco_login = findViewById(R.id.ll_container_coco_login);
         ll_arrow_image_coco = findViewById(R.id.ll_arrow_image_coco);
@@ -91,50 +115,54 @@ public class CooCoLogin extends AppCompatActivity {
 
                     TransitionManager.beginDelayedTransition(ll_container_coco_login,
                             new ChangeText().setChangeBehavior(ChangeText.CHANGE_BEHAVIOR_OUT_IN));
-                    tv_login_reg_pretext_coco.setText("Already have an account? ");
-                    tv_login_reg_coco.setText("Log In");
+                    tv_login_reg_pretext_coco.setText("Already have an account ?  ");
+                    tv_login_reg_coco.setText("Log In  ");
                     tv_sign_in_coco.setText("Sign Up");
-                    transition.reverseTransition(300);
-                    transition_img.reverseTransition(300);
+                    transition.reverseTransition(Animation_Duration);
+                    transition_img.reverseTransition(Animation_Duration);
                     //tv_forgot_pass_coco.setVisibility(View.VISIBLE);
-                    tv_forgot_pass_coco.animate()
+                    /*tv_forgot_pass_coco.animate()
                             .translationY(fp_height)
                             .alpha(1.0f)
-                            .setDuration(300)
+                            .setDuration(500)
                             .setListener(new AnimatorListenerAdapter() {
                                 @Override
                                 public void onAnimationEnd(Animator animation) {
                                     super.onAnimationEnd(animation);
                                     tv_forgot_pass_coco.setVisibility(View.VISIBLE);
                                 }
-                            });
+                            });*/
+
+                    AnimateMainLayout();
+                    //AnimateViewPager();
                     b_is_reg = !b_is_reg;
                 }
                 else{
 
                     TransitionManager.beginDelayedTransition(ll_container_coco_login,
                             new ChangeText().setChangeBehavior(ChangeText.CHANGE_BEHAVIOR_OUT_IN));
-                    tv_login_reg_pretext_coco.setText("Create a new ");
-                    tv_login_reg_coco.setText("account");
+                    tv_login_reg_pretext_coco.setText("Create a new  ");
+                    tv_login_reg_coco.setText("account  ");
                     tv_sign_in_coco.setText("Sign In");
-                    transition.startTransition(300);
-                    transition_img.startTransition(300);
+                    transition.startTransition(Animation_Duration);
+                    transition_img.startTransition(Animation_Duration);
                     //tv_forgot_pass_coco.setVisibility(View.GONE);
                     //tv_forgot_pass_coco.animate().translationY(fp_height);
 
                     AnimateMainLayout();
 
-                    tv_forgot_pass_coco.animate()
+                    /*tv_forgot_pass_coco.animate()
                             .translationY(tv_forgot_pass_coco.getHeight())
                             .alpha(0.0f)
-                            .setDuration(300)
+                            .setDuration(500)
                             .setListener(new AnimatorListenerAdapter() {
                                 @Override
                                 public void onAnimationEnd(Animator animation) {
                                     super.onAnimationEnd(animation);
                                     tv_forgot_pass_coco.setVisibility(View.GONE);
                                 }
-                            });
+                            });*/
+                    //AnimateViewPager();
                     b_is_reg = !b_is_reg;
                 }
 
@@ -144,13 +172,39 @@ public class CooCoLogin extends AppCompatActivity {
         });
     }
 
-    private void AnimateMainLayout() {
 
-        ConstraintSet constraintSet = new ConstraintSet();
-        constraintSet.clone(this, R.layout.activity_main_animated);
-        ChangeBounds transition = new ChangeBounds();
-        transition.setInterpolator(new AnticipateInterpolator(1.0f));
-        transition.setDuration(500);
+    private  void AnimateViewPager(){
+
+
+        b_viewpager = transitions.SlideUpDown(ll_container_coco_login,ll_container_viewpager,b_viewpager,1,300);
 
     }
+
+    private void AnimateMainLayout() {
+
+
+        ConstraintSet constraintSet = new ConstraintSet();
+        if(b_is_reg){
+            constraintSet.clone(this, R.layout.activity_coo_co_login_animated);
+        }
+        else{
+            constraintSet.clone(this, R.layout.activity_coo_co_login);
+        }
+        ChangeBounds transition = new ChangeBounds();
+        transition.setInterpolator(new DecelerateInterpolator(1.0f));
+        transition.setDuration(Animation_Duration);
+
+        android.transition.TransitionManager.beginDelayedTransition(ll_container_coco_login, transition);
+        constraintSet.applyTo(ll_container_coco_login);
+
+        /*Transition transition = new Fade();
+        transition.setDuration(300);
+        transition.addTarget(R.id.ll_mobile_number_coco);
+        ViewGroup parent = findViewById(R.id.ll_container_coco_login);
+        TransitionManager.beginDelayedTransition(parent, transition);
+        ll_mobile_number_coco.setVisibility(b_is_reg ? View.GONE : View.VISIBLE);*/
+
+    }
+
+
 }
