@@ -3,6 +3,7 @@ package com.example.mobihealthtest;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.transition.TransitionManager;
@@ -14,7 +15,9 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.TransitionDrawable;
 import android.os.Bundle;
+import android.transition.ChangeBounds;
 import android.view.View;
+import android.view.animation.AnticipateInterpolator;
 import android.widget.LinearLayout;
 import android.widget.TextSwitcher;
 import android.widget.TextView;
@@ -26,7 +29,7 @@ import com.transitionseverywhere.Recolor;
 public class CooCoLogin extends AppCompatActivity {
 
     //Main container
-    LinearLayout ll_container_coco_login;
+    ConstraintLayout ll_container_coco_login;
 
     //Forgot Password
     TextView tv_forgot_pass_coco;
@@ -95,14 +98,14 @@ public class CooCoLogin extends AppCompatActivity {
                     transition_img.reverseTransition(300);
                     //tv_forgot_pass_coco.setVisibility(View.VISIBLE);
                     tv_forgot_pass_coco.animate()
-                            .translationY(tv_forgot_pass_coco.getHeight())
-                            .alpha(0.0f)
+                            .translationY(fp_height)
+                            .alpha(1.0f)
                             .setDuration(300)
                             .setListener(new AnimatorListenerAdapter() {
                                 @Override
                                 public void onAnimationEnd(Animator animation) {
                                     super.onAnimationEnd(animation);
-                                    tv_forgot_pass_coco.setVisibility(View.GONE);
+                                    tv_forgot_pass_coco.setVisibility(View.VISIBLE);
                                 }
                             });
                     b_is_reg = !b_is_reg;
@@ -118,15 +121,18 @@ public class CooCoLogin extends AppCompatActivity {
                     transition_img.startTransition(300);
                     //tv_forgot_pass_coco.setVisibility(View.GONE);
                     //tv_forgot_pass_coco.animate().translationY(fp_height);
+
+                    AnimateMainLayout();
+
                     tv_forgot_pass_coco.animate()
-                            .translationY(fp_height)
-                            .alpha(1.0f)
+                            .translationY(tv_forgot_pass_coco.getHeight())
+                            .alpha(0.0f)
                             .setDuration(300)
                             .setListener(new AnimatorListenerAdapter() {
                                 @Override
                                 public void onAnimationEnd(Animator animation) {
                                     super.onAnimationEnd(animation);
-                                    tv_forgot_pass_coco.setVisibility(View.VISIBLE);
+                                    tv_forgot_pass_coco.setVisibility(View.GONE);
                                 }
                             });
                     b_is_reg = !b_is_reg;
@@ -136,5 +142,15 @@ public class CooCoLogin extends AppCompatActivity {
 
             }
         });
+    }
+
+    private void AnimateMainLayout() {
+
+        ConstraintSet constraintSet = new ConstraintSet();
+        constraintSet.clone(this, R.layout.activity_main_animated);
+        ChangeBounds transition = new ChangeBounds();
+        transition.setInterpolator(new AnticipateInterpolator(1.0f));
+        transition.setDuration(500);
+
     }
 }
