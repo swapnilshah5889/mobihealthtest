@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2f3f7"
+    tools:context=".CooCoLogin"
+    android:id="@+id/ll_container_coco_login">
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <!--Full Name Input-->
+        <LinearLayout
+            android:id="@+id/ll_full_name_coco"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/thirty_sdp"
+            android:layout_marginBottom="@dimen/twenty_sdp"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/twenty_sdp"
+            android:paddingRight="@dimen/twenty_sdp"
+            android:background="#34C1B8"
+            app:layout_constraintBottom_toTopOf="@+id/ll_mobile_number_coco2"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintRight_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+
+
+
+        </LinearLayout>
+
+
+        <!--User ID Input-->
+        <LinearLayout
+            android:id="@+id/ll_mobile_number_coco2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/bottom_margin"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/padding_lr"
+            android:paddingRight="@dimen/padding_lr"
+            app:layout_constraintTop_toBottomOf="@id/ll_full_name_coco"
+            app:layout_constraintBottom_toTopOf="@+id/ll_mobile_number_coco"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintRight_toLeftOf="parent">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/bottom_margin_header"
+                android:paddingStart="@dimen/margin_lr_input"
+                android:text="Full Name"
+                android:textColor="#7a7a7a"
+                android:textSize="@dimen/text_heading"
+                android:textStyle="bold"></TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_lr_input"
+                android:layout_marginEnd="@dimen/margin_lr_input"
+                android:background="@drawable/input_coco_background"
+                android:padding="@dimen/padding_input">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_tb_input"
+                    android:layout_marginBottom="@dimen/margin_tb_input"
+                    android:background="#0000"
+                    android:hint="Name"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingStart="@dimen/padding_lr_input"
+                    android:paddingEnd="@dimen/padding_lr_input"
+                    android:textColorHint="#b6becb"
+                    android:textSize="@dimen/text_input"></EditText>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+
+        <!--User ID Input-->
+        <LinearLayout
+            android:id="@+id/ll_mobile_number_coco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="@dimen/bottom_margin"
+            android:paddingLeft="@dimen/padding_lr"
+            android:paddingRight="@dimen/padding_lr"
+            app:layout_constraintTop_toBottomOf="@id/ll_mobile_number_coco2"
+            app:layout_constraintBottom_toTopOf="@+id/ll_password_coco"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintRight_toLeftOf="parent">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/bottom_margin_header"
+                android:paddingStart="@dimen/margin_lr_input"
+                android:text="User ID"
+                android:textColor="#7a7a7a"
+                android:textSize="@dimen/text_heading"
+                android:textStyle="bold"></TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_lr_input"
+                android:layout_marginEnd="@dimen/margin_lr_input"
+                android:padding="@dimen/padding_input"
+                android:background="@drawable/input_coco_background">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_tb_input"
+                    android:layout_marginBottom="@dimen/margin_tb_input"
+                    android:background="#0000"
+                    android:hint="Mobile No."
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:maxLines="1"
+                    android:paddingStart="@dimen/padding_lr_input"
+                    android:paddingEnd="@dimen/padding_lr_input"
+                    android:textColorHint="#b6becb"
+                    android:textSize="@dimen/text_input"></EditText>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <!--Password Input-->
+        <LinearLayout
+            android:id="@+id/ll_password_coco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="@dimen/bottom_margin"
+            android:paddingLeft="@dimen/padding_lr"
+            android:paddingRight="@dimen/padding_lr"
+            app:layout_constraintTop_toBottomOf="@id/ll_mobile_number_coco"
+            app:layout_constraintBottom_toTopOf="@+id/ll_cpassword_coco"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintRight_toLeftOf="parent">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/bottom_margin_header"
+                android:paddingStart="@dimen/margin_lr_input"
+                android:text="Password"
+                android:textColor="#7a7a7a"
+                android:textSize="@dimen/text_heading"
+                android:textStyle="bold"></TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_lr_input"
+                android:layout_marginEnd="@dimen/margin_lr_input"
+                android:padding="@dimen/padding_input"
+                android:background="@drawable/input_coco_background"
+                >
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_tb_input"
+                    android:layout_marginBottom="@dimen/margin_tb_input"
+                    android:paddingStart="@dimen/padding_lr_input"
+                    android:paddingEnd="@dimen/padding_lr_input"
+                    android:background="#0000"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:textColorHint="#b6becb"
+                    android:textSize="@dimen/text_input"></EditText>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+
+
+        <!--Confirm Password Input-->
+        <LinearLayout
+            android:id="@+id/ll_cpassword_coco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="@dimen/bottom_margin"
+            android:paddingLeft="@dimen/padding_lr"
+            android:paddingRight="@dimen/padding_lr"
+            app:layout_constraintTop_toBottomOf="@id/ll_password_coco"
+            app:layout_constraintBottom_toTopOf="@+id/ll_dob_coco"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintRight_toLeftOf="parent">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/bottom_margin_header"
+                android:paddingStart="@dimen/margin_lr_input"
+                android:text="Confirm Password"
+                android:textColor="#7a7a7a"
+                android:textSize="@dimen/text_heading"
+                android:textStyle="bold"></TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_lr_input"
+                android:layout_marginEnd="@dimen/margin_lr_input"
+                android:padding="@dimen/padding_input"
+                android:background="@drawable/input_coco_background"
+                >
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_tb_input"
+                    android:layout_marginBottom="@dimen/margin_tb_input"
+                    android:background="#0000"
+                    android:hint="Confirm Password"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:paddingStart="@dimen/padding_lr_input"
+                    android:paddingEnd="@dimen/padding_lr_input"
+                    android:textColorHint="#b6becb"
+                    android:textSize="@dimen/text_input"></EditText>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+
+        <!--Date of Birth Input-->
+        <LinearLayout
+            android:id="@+id/ll_dob_coco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/padding_lr"
+            android:paddingRight="@dimen/padding_lr"
+            app:layout_constraintTop_toBottomOf="@id/ll_cpassword_coco"
+            app:layout_constraintBottom_toTopOf="@+id/ll_forgot_password"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintRight_toLeftOf="parent">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/bottom_margin_header"
+                android:paddingStart="@dimen/margin_lr_input"
+                android:text="Date of Birth"
+                android:textColor="#7a7a7a"
+                android:textSize="@dimen/text_heading"
+                android:textStyle="bold"></TextView>
+
+            <LinearLayout
+                android:weightSum="10"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_lr_input"
+                android:layout_marginEnd="@dimen/margin_lr_input"
+                android:padding="@dimen/padding_input"
+                android:background="@drawable/input_coco_background"
+                >
+
+                <TextView
+                    android:layout_weight="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_tb_input_cal"
+                    android:layout_marginBottom="@dimen/margin_tb_input_cal"
+                    android:paddingStart="@dimen/padding_lr_input"
+                    android:paddingEnd="@dimen/padding_lr_input"
+                    android:background="#0000"
+                    android:hint="29 - 01 - 2020"
+                    android:maxLines="1"
+                    android:maxLength="10"
+                    android:inputType="number"
+                    android:textColorHint="#b6becb"
+                    android:textSize="@dimen/text_input"></TextView>
+
+                <LinearLayout
+                    android:gravity="right|center_vertical"
+                    android:layout_weight="8"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:src="@drawable/ic_calender"
+                        android:layout_width="@dimen/img_sb"
+                        android:layout_height="@dimen/img_sb">
+                    </ImageView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <!--Forgot Password-->
+        <LinearLayout
+            android:id="@+id/ll_forgot_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_t_fp"
+            android:layout_marginBottom="@dimen/margin_b_fp"
+            android:gravity="right"
+            android:orientation="vertical"
+            android:paddingEnd="@dimen/padding_r_fp"
+            app:layout_constraintBottom_toTopOf="@+id/ll_login_register_button_coco"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintRight_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_dob_coco">
+
+            <TextView
+                android:id="@+id/tv_forgot_pass_coco"
+                android:animateLayoutChanges="true"
+                android:visibility="visible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Forgot Password"
+                android:textColor="#5f7fb2"
+                android:textSize="@dimen/text_fp"
+                android:textStyle="bold"></TextView>
+        </LinearLayout>
+
+
+        <!--Sign in Button-->
+        <LinearLayout
+            android:id="@+id/ll_login_register_button_coco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_b_sb"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/ll_forgot_password"
+            app:layout_constraintBottom_toTopOf="@+id/ll_login_register_coco"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintRight_toLeftOf="parent">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/cl_signin_reg_button"
+                android:background="@drawable/transition_coco_btn"
+                >
+
+
+                <TextSwitcher
+                    android:id="@+id/tv_sign_in_coco"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_lr_sb"
+                    android:layout_marginRight="@dimen/margin_lr_sb"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/ll_arrow_image_coco"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:text="Sign Up"
+                        android:textColor="#dfff"
+                        android:textSize="@dimen/text_sb"
+                        android:textStyle="normal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"></TextView>
+
+                    <TextView
+                        android:textColor="#dfff"
+                        android:textSize="@dimen/text_sb"
+                        android:textStyle="normal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"></TextView>
+
+                </TextSwitcher>
+
+
+                <LinearLayout
+                    android:id="@+id/ll_arrow_image_coco"
+                    android:layout_width="@dimen/img_sb"
+                    android:layout_height="@dimen/img_sb"
+                    android:layout_marginLeft="@dimen/margin_l_img_sb"
+                    android:layout_marginTop="@dimen/margin_tbr_img_sb"
+                    android:layout_marginRight="@dimen/margin_tbr_img_sb"
+                    android:layout_marginBottom="@dimen/margin_tbr_img_sb"
+                    android:background="@drawable/transition_coco_img"
+                    android:elevation="@dimen/margin_tbr_img_sb"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toRightOf="@+id/tv_sign_in_coco"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="@dimen/margin_tbr_img_sb"
+                        android:src="@drawable/ic_arrow"></ImageView>
+                </LinearLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+        <!--Login Register-->
+        <LinearLayout
+            android:id="@+id/ll_login_register_coco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_b_log"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/ll_login_register_button_coco"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintRight_toLeftOf="parent">
+
+            <TextView
+                android:id="@+id/tv_login_reg_pretext_coco"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Already have an account? "
+                android:textColor="#8895a6"
+                android:textSize="@dimen/text_log"
+                android:textStyle="normal"></TextView>
+
+
+            <TextView
+                android:clickable="true"
+                android:id="@+id/tv_login_reg_coco"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Log In"
+                android:textColor="#5f7fb2"
+                android:textSize="@dimen/text_log"
+                android:textStyle="bold"></TextView>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</LinearLayout>

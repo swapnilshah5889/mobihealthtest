@@ -3,4 +3,14 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+
+    <color name="coco_signin_btn_blue">#01A1FF</color>
+    <color name="coco_signin_btn_blue_light">#2cb1fe</color>
+
+
+    <color name="coco_signin_btn_red">#ec5051</color>
+    <color name="coco_signin_btn_red_light">#ff7575</color>
+
+
 </resources>

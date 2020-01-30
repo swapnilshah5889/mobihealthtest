@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <!--    CooCo Login Register-->
+    <dimen name="text_heading">@dimen/_12sdp</dimen>
+    <dimen name="text_input">@dimen/_14sdp</dimen>
+
+
+    <dimen name="twenty_sdp">@dimen/_20sdp</dimen>
+    <dimen name="thirty_sdp">@dimen/_30sdp</dimen>
+
+
+    <!--input linear layout-->
+    <dimen name="bottom_margin">@dimen/_20sdp</dimen>
+    <dimen name="padding_lr">@dimen/_20sdp</dimen>
+    <dimen name="bottom_margin_header">@dimen/_5sdp</dimen>
+    <dimen name="padding_start_header">@dimen/_40sdp</dimen>
+    <dimen name="margin_lr_input">@dimen/_20sdp</dimen>
+    <dimen name="margin_tb_input">@dimen/_3sdp</dimen>
+    <dimen name="padding_lr_input">@dimen/_25sdp</dimen>
+    <dimen name="padding_input">@dimen/_8sdp</dimen>
+
+    <dimen name="margin_tb_input_cal">@dimen/_5sdp</dimen>
+
+
+    <!--Forgot Password-->
+    <dimen name="margin_t_fp">@dimen/_5sdp</dimen>
+    <dimen name="margin_b_fp">@dimen/_15sdp</dimen>
+    <dimen name="padding_r_fp">@dimen/_60sdp</dimen>
+    <dimen name="text_fp">@dimen/_12sdp</dimen>
+
+
+    <!--Sign in button-->
+    <dimen name="margin_b_sb">@dimen/_10sdp</dimen>
+    <dimen name="margin_lr_sb">@dimen/_17sdp</dimen>
+    <dimen name="text_sb">@dimen/_16sdp</dimen>
+    <dimen name="img_sb">@dimen/_32sdp</dimen>
+    <dimen name="margin_tbr_img_sb">@dimen/_7sdp</dimen>
+    <dimen name="margin_l_img_sb">@dimen/_24sdp</dimen>
+
+    <!--login register-->
+    <dimen name="text_log">@dimen/_11sdp</dimen>
+    <dimen name="margin_b_log">@dimen/_11sdp</dimen>
+
+
+
+</resources>
