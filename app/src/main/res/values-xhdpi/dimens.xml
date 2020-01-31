@@ -5,6 +5,7 @@
 
     <!--    CooCo Login Register-->
     <dimen name="text_heading">@dimen/_12sdp</dimen>
+    <dimen name="text_error">@dimen/_9sdp</dimen>
     <dimen name="text_input">@dimen/_14sdp</dimen>
 
 

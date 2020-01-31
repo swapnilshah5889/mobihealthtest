@@ -19,11 +19,41 @@
         android:layout_marginBottom="@dimen/twenty_sdp"
         android:background="@color/viewpager_background"
         android:orientation="vertical"
-        android:paddingLeft="@dimen/twenty_sdp"
-        android:paddingRight="@dimen/twenty_sdp"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
+
+        <LinearLayout
+            android:id="@+id/ll_viewpager_container"
+            android:translationZ="2dp"
+            android:orientation="vertical"
+            android:weightSum="10"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/vp_coco_login"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:overScrollMode="never">
+            </androidx.viewpager.widget.ViewPager>
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tb_coco_login"
+                android:layout_weight="9"
+                android:layout_width="match_parent"
+                app:tabBackground="@drawable/tab_selector"
+                app:tabGravity="center"
+                app:tabIndicatorHeight="0dp"
+                app:tabPaddingStart="5dp"
+                app:tabPaddingEnd="5dp"
+                android:layout_height="match_parent"></com.google.android.material.tabs.TabLayout>
+
+
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -44,15 +74,33 @@
         app:layout_constraintRight_toLeftOf="parent">
 
 
-        <TextView
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/bottom_margin_header"
-            android:paddingStart="@dimen/margin_lr_input"
-            android:text="Full Name"
-            android:textColor="#7a7a7a"
-            android:textSize="@dimen/text_heading"
-            android:textStyle="bold"></TextView>
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/bottom_margin_header"
+                android:paddingStart="@dimen/margin_lr_input"
+                android:text="Full Name"
+                android:textColor="@color/header_text"
+                android:textSize="@dimen/text_heading"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:layout_marginStart="@dimen/_10sdp"
+                android:textSize="@dimen/text_error"
+                android:gravity="center_vertical"
+                android:text="*Required"
+                android:layout_marginBottom="@dimen/bottom_margin_header"
+                android:textColor="@color/err_message"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+            </TextView>
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -88,7 +136,7 @@
         android:id="@+id/ll_mobile_number_coco"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/thirty_sdp"
+        android:layout_marginTop="@dimen/twenty_sdp"
         android:layout_marginBottom="@dimen/bottom_margin"
         android:orientation="vertical"
         android:paddingLeft="@dimen/padding_lr"
@@ -100,16 +148,33 @@
         app:layout_constraintTop_toBottomOf="@+id/ll_extra_layout">
 
 
-        <TextView
-            android:background="#f2f3f7"
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/bottom_margin_header"
-            android:paddingStart="@dimen/margin_lr_input"
-            android:text="User ID"
-            android:textColor="#7a7a7a"
-            android:textSize="@dimen/text_heading"
-            android:textStyle="bold"></TextView>
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/bottom_margin_header"
+                android:paddingStart="@dimen/margin_lr_input"
+                android:text="User ID"
+                android:textColor="@color/header_text"
+                android:textSize="@dimen/text_heading"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:layout_marginStart="@dimen/_10sdp"
+                android:textSize="@dimen/text_error"
+                android:gravity="center_vertical"
+                android:text="*Required"
+                android:layout_marginBottom="@dimen/bottom_margin_header"
+                android:textColor="@color/err_message"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+            </TextView>
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -145,7 +210,6 @@
         android:id="@+id/ll_password_coco"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/_10sdp"
         android:orientation="vertical"
         android:paddingLeft="@dimen/padding_lr"
         android:paddingRight="@dimen/padding_lr"
@@ -156,15 +220,33 @@
         app:layout_constraintTop_toBottomOf="@id/ll_mobile_number_coco">
 
 
-        <TextView
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/bottom_margin_header"
-            android:paddingStart="@dimen/margin_lr_input"
-            android:text="Password"
-            android:textColor="#7a7a7a"
-            android:textSize="@dimen/text_heading"
-            android:textStyle="bold"></TextView>
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/bottom_margin_header"
+                android:paddingStart="@dimen/margin_lr_input"
+                android:text="Password"
+                android:textColor="@color/header_text"
+                android:textSize="@dimen/text_heading"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:layout_marginStart="@dimen/_10sdp"
+                android:textSize="@dimen/text_error"
+                android:gravity="center_vertical"
+                android:text="*Required"
+                android:layout_marginBottom="@dimen/bottom_margin_header"
+                android:textColor="@color/err_message"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+            </TextView>
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -191,6 +273,20 @@
         </LinearLayout>
 
 
+        <TextView
+            android:visibility="visible"
+            android:layout_marginEnd="@dimen/margin_lr_input"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:textSize="@dimen/text_error"
+            android:gravity="center"
+            android:text="User ID and Password do not match."
+            android:textColor="@color/err_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
     </LinearLayout>
 
 
@@ -209,15 +305,33 @@
         app:layout_constraintRight_toLeftOf="parent">
 
 
-        <TextView
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/bottom_margin_header"
-            android:paddingStart="@dimen/margin_lr_input"
-            android:text="Confirm Password"
-            android:textColor="#7a7a7a"
-            android:textSize="@dimen/text_heading"
-            android:textStyle="bold"></TextView>
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/bottom_margin_header"
+                android:paddingStart="@dimen/margin_lr_input"
+                android:text="Confirm Password"
+                android:textColor="@color/header_text"
+                android:textSize="@dimen/text_heading"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:layout_marginStart="@dimen/_10sdp"
+                android:textSize="@dimen/text_error"
+                android:gravity="center_vertical"
+                android:text="*Required"
+                android:layout_marginBottom="@dimen/bottom_margin_header"
+                android:textColor="@color/err_message"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+            </TextView>
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -261,15 +375,33 @@
         app:layout_constraintRight_toLeftOf="parent">
 
 
-        <TextView
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/bottom_margin_header"
-            android:paddingStart="@dimen/margin_lr_input"
-            android:text="Date of Birth"
-            android:textColor="#7a7a7a"
-            android:textSize="@dimen/text_heading"
-            android:textStyle="bold"></TextView>
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/bottom_margin_header"
+                android:paddingStart="@dimen/margin_lr_input"
+                android:text="Date of Birth"
+                android:textColor="@color/header_text"
+                android:textSize="@dimen/text_heading"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:layout_marginStart="@dimen/_10sdp"
+                android:textSize="@dimen/text_error"
+                android:gravity="center_vertical"
+                android:text="*Required"
+                android:layout_marginBottom="@dimen/bottom_margin_header"
+                android:textColor="@color/err_message"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+            </TextView>
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -322,7 +454,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_t_fp"
-        android:layout_marginBottom="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
         android:gravity="right"
         android:orientation="vertical"
         android:paddingEnd="@dimen/padding_r_fp"
@@ -344,32 +476,7 @@
             android:visibility="visible"></TextView>
     </LinearLayout>
 
-    <!--Forgot Password Blank-->
-    <LinearLayout
-        android:id="@+id/ll_forgot_password_blank"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_t_fp"
-        android:layout_marginBottom="@dimen/_10sdp"
-        android:gravity="right"
-        android:orientation="vertical"
-        android:paddingEnd="@dimen/padding_r_fp"
-        android:translationZ="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/ll_login_register_button_coco"
-        app:layout_constraintLeft_toRightOf="parent"
-        app:layout_constraintRight_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll_password_coco">
 
-        <TextView
-            android:id="@+id/tv_forgot_pass_coco_blank"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:animateLayoutChanges="true"
-            android:textColor="#5f7fb2"
-            android:textSize="@dimen/text_fp"
-            android:textStyle="bold"
-            android:visibility="visible"></TextView>
-    </LinearLayout>
 
 
     <!--Sign in Button-->
@@ -466,6 +573,7 @@
         app:layout_constraintTop_toBottomOf="@+id/ll_login_register_button_coco">
 
         <TextView
+            android:animateLayoutChanges="true"
             android:id="@+id/tv_login_reg_pretext_coco"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -476,6 +584,7 @@
 
 
         <TextView
+            android:animateLayoutChanges="true"
             android:id="@+id/tv_login_reg_coco"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

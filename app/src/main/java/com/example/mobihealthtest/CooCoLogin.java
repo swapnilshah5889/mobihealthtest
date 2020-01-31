@@ -10,6 +10,7 @@ import androidx.transition.Fade;
 import androidx.transition.Slide;
 import androidx.transition.Transition;
 import androidx.transition.TransitionManager;
+import androidx.viewpager.widget.ViewPager;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -29,6 +30,7 @@ import android.widget.TextSwitcher;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.tabs.TabLayout;
 import com.transitionseverywhere.ChangeText;
 import com.transitionseverywhere.Recolor;
 
@@ -39,12 +41,15 @@ public class CooCoLogin extends AppCompatActivity {
 
 
     //ViewPager
-    LinearLayout ll_container_viewpager;
+    LinearLayout ll_container_viewpager,ll_viewpager_container;
+    ViewPager vp_coco_login;
+    TabLayout tb_coco_login;
     Boolean b_viewpager = false;
 
     //Forgot Password
     TextView tv_forgot_pass_coco;
     int fp_height = 0;
+    LinearLayout ll_forgot_password;
 
 
     //Input
@@ -58,7 +63,7 @@ public class CooCoLogin extends AppCompatActivity {
 
     //sign in/register text
     TextView tv_login_reg_pretext_coco,tv_login_reg_coco;
-    private int Animation_Duration = 500;
+    private int Animation_Duration = 700;
 
 
     @Override
@@ -77,6 +82,7 @@ public class CooCoLogin extends AppCompatActivity {
         ll_password_coco = findViewById(R.id.ll_password_coco);
         ll_cpassword_coco = findViewById(R.id.ll_cpassword_coco);
         ll_dob_coco = findViewById(R.id.ll_dob_coco);
+        ll_forgot_password = findViewById(R.id.ll_forgot_password);
 
         ll_container_viewpager = findViewById(R.id.ll_container_viewpager);
 
@@ -97,7 +103,19 @@ public class CooCoLogin extends AppCompatActivity {
         tv_sign_in_coco.setInAnimation(this,android.R.anim.fade_in);
         tv_sign_in_coco.setOutAnimation(this,android.R.anim.fade_out);
 
+
+        ll_viewpager_container = findViewById(R.id.ll_viewpager_container);
+        vp_coco_login = findViewById(R.id.vp_coco_login);
+        tb_coco_login = findViewById(R.id.tb_coco_login);
+        SetViewPager();
+
         OnClickMethods();
+
+    }
+
+    private void SetViewPager() {
+
+        vp_coco_login.setOffscreenPageLimit(3);
 
     }
 
@@ -134,6 +152,7 @@ public class CooCoLogin extends AppCompatActivity {
                             });*/
 
                     AnimateMainLayout();
+                    //FadeComponents(b_is_reg);
                     //AnimateViewPager();
                     b_is_reg = !b_is_reg;
                 }
@@ -163,6 +182,9 @@ public class CooCoLogin extends AppCompatActivity {
                                 }
                             });*/
                     //AnimateViewPager();
+
+                    //FadeComponents(b_is_reg);
+
                     b_is_reg = !b_is_reg;
                 }
 
@@ -170,6 +192,17 @@ public class CooCoLogin extends AppCompatActivity {
 
             }
         });
+    }
+
+    private void FadeComponents(boolean isvisible) {
+
+        transitions.FadeInOut2(ll_cpassword_coco,isvisible,this,Animation_Duration);
+        transitions.FadeInOut2(ll_dob_coco,isvisible,this,Animation_Duration);
+        transitions.FadeInOut2(ll_full_name_coco,isvisible,this,Animation_Duration);
+        if(isvisible)
+            transitions.FadeInOut2(ll_forgot_password,!isvisible,this,(Animation_Duration-200));
+        else
+            transitions.FadeInOut2(ll_forgot_password,!isvisible,this,(Animation_Duration-200));
     }
 
 

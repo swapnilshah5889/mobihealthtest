@@ -81,4 +81,22 @@ public class transitions {
         target.setVisibility(isVisible ? View.VISIBLE : View.GONE);
         return isVisible;
     }
+
+    public static Boolean FadeInOut2(View target, Boolean isVisible, Context context, int duration){
+
+        Animation mLoadAnimation;
+        if(isVisible == true){
+            mLoadAnimation = AnimationUtils.loadAnimation(context, android.R.anim.fade_out);
+        }
+        else
+        {
+            mLoadAnimation = AnimationUtils.loadAnimation(context, android.R.anim.fade_in);
+        }
+
+        mLoadAnimation.setDuration(duration);
+        target.startAnimation(mLoadAnimation);
+        isVisible = !isVisible;
+        target.setVisibility(isVisible ? View.VISIBLE : View.GONE);
+        return isVisible;
+    }
 }
