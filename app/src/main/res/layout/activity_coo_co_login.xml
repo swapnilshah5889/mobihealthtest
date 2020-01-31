@@ -19,16 +19,16 @@
         android:layout_marginBottom="@dimen/twenty_sdp"
         android:background="@color/viewpager_background"
         android:orientation="vertical"
-        android:paddingLeft="@dimen/twenty_sdp"
-        android:paddingRight="@dimen/twenty_sdp"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
 
         <LinearLayout
+            android:visibility="invisible"
+            android:paddingTop="@dimen/_20sdp"
             android:id="@+id/ll_viewpager_container"
-            android:translationZ="@dimen/_2sdp"
+            android:translationZ="2dp"
             android:orientation="vertical"
             android:weightSum="10"
             android:layout_width="match_parent"
@@ -47,7 +47,7 @@
                 android:id="@+id/tb_coco_login"
                 android:layout_weight="9"
                 android:layout_width="match_parent"
-                app:tabBackground="@drawable/tab_selector"
+                app:tabBackground="@drawable/tab_selector2"
                 app:tabGravity="center"
                 app:tabIndicatorHeight="0dp"
                 app:tabPaddingStart="5dp"
@@ -93,6 +93,7 @@
                 android:textStyle="bold"></TextView>
 
             <TextView
+                android:visibility="invisible"
                 android:layout_marginStart="@dimen/_10sdp"
                 android:textSize="@dimen/text_error"
                 android:gravity="center_vertical"
@@ -166,6 +167,7 @@
                 android:textStyle="bold"></TextView>
 
             <TextView
+                android:visibility="invisible"
                 android:layout_marginStart="@dimen/_10sdp"
                 android:textSize="@dimen/text_error"
                 android:gravity="center_vertical"
@@ -238,6 +240,7 @@
                 android:textStyle="bold"></TextView>
 
             <TextView
+                android:visibility="invisible"
                 android:layout_marginStart="@dimen/_10sdp"
                 android:textSize="@dimen/text_error"
                 android:gravity="center_vertical"
@@ -277,7 +280,7 @@
 
 
         <TextView
-            android:visibility="visible"
+            android:visibility="invisible"
             android:layout_marginEnd="@dimen/margin_lr_input"
             android:layout_marginTop="@dimen/_3sdp"
             android:layout_marginStart="@dimen/_10sdp"
@@ -325,6 +328,7 @@
                 android:textStyle="bold"></TextView>
 
             <TextView
+                android:visibility="invisible"
                 android:layout_marginStart="@dimen/_10sdp"
                 android:textSize="@dimen/text_error"
                 android:gravity="center_vertical"
@@ -396,6 +400,7 @@
                 android:textStyle="bold"></TextView>
 
             <TextView
+                android:visibility="invisible"
                 android:layout_marginStart="@dimen/_10sdp"
                 android:textSize="@dimen/text_error"
                 android:gravity="center_vertical"
